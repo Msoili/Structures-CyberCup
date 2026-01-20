@@ -1,113 +1,35 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="fr">
 <head>
-  
-  <meta charset="UTF-8">
-  <title>CyberCup Océan Indien 2026</title>
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 80%;
-      margin: 20px auto;
-    }
-    th, td {
-      border: 1px solid #333;
-      padding: 8px;
-      text-align: center;
-    }
-    button {
-      margin: 5px;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>Mon site — Accueil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <h2 style="text-align:center;">CyberCup Océan Indien 2026</h2>
+<header class="site-header">
+  <nav>
+    <div class="nav-container">
+      <a class="logo">Gest<span>Structures</span></a>
+      <ul class="nav-links"></ul>
+    </div>
+  </nav>
+  <nav class="site-nav">
+    <a href="Maurice.html">Maurice</a>
+    <a href="Réunion.html">Réunion</a>
+    <a href="Madagascar.html">Madagascar</a>
+    <a href="Madagascar.html">Mayotte</a>
 
-  <table id="annuaire">
-    <thead>
-      <tr>
-        <th>Structure</th>
-        <th>Email</th>
-        <th>Contact</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Les lignes ajoutées apparaîtront ici -->
-    </tbody>
-  </table>
+  </nav>
+</header>
 
-  <div style="text-align:center;">
-    <button onclick="ajouterLigne()">Ajouter une entrée</button>
-  </div>
+<main class="container">
+  <section class="card">
+    <h2>Bienvenue</h2>
+    <p>Consultez vos différentes structures CyberCup océan indien.</p>
+  </section>
+</main>
 
-  <script>
-    // Charger les données sauvegardées au démarrage
-    window.onload = function() {
-      let data = JSON.parse(localStorage.getItem("annuaireData")) || [];
-      data.forEach(item => ajouterLigne(item.structure, item.email, item.contact, false));
-    };
-
-    function ajouterLigne(structure, email, contact, save = true) {
-      if(!structure && !email && !contact) {
-        structure = prompt("Nom de la structure :") || "";
-        email = prompt("Email officiel :") || "";
-        contact = prompt("Nom du contact :") || "";
-      }
-
-      let tableau = document.getElementById("annuaire").getElementsByTagName("tbody")[0];
-      let ligne = tableau.insertRow();
-
-      ligne.insertCell(0).innerText = structure;
-      ligne.insertCell(1).innerText = email;
-      ligne.insertCell(2).innerText = contact;
-
-      // Cellule Actions
-      let cellAction = ligne.insertCell(3);
-
-      // Bouton Modifier
-      let btnModifier = document.createElement("button");
-      btnModifier.innerText = "Modifier";
-      btnModifier.onclick = function() {
-        let newStructure = prompt("Modifier la structure :", ligne.cells[0].innerText) || ligne.cells[0].innerText;
-        let newEmail = prompt("Modifier l'email :", ligne.cells[1].innerText) || ligne.cells[1].innerText;
-        let newContact = prompt("Modifier le contact :", ligne.cells[2].innerText) || ligne.cells[2].innerText;
-
-        ligne.cells[0].innerText = newStructure;
-        ligne.cells[1].innerText = newEmail;
-        ligne.cells[2].innerText = newContact;
-        sauvegarder();
-      };
-      cellAction.appendChild(btnModifier);
-
-      // Bouton Supprimer
-      let btnSupprimer = document.createElement("button");
-      btnSupprimer.innerText = "Supprimer";
-      btnSupprimer.onclick = function() {
-        tableau.deleteRow(ligne.rowIndex - 1);
-        sauvegarder();
-      };
-      cellAction.appendChild(btnSupprimer);
-
-      if(save) sauvegarder();
-    }
-
-    // Sauvegarder toutes les lignes dans LocalStorage
-    function sauvegarder() {
-      let tableau = document.getElementById("annuaire").getElementsByTagName("tbody")[0];
-      let data = [];
-      for(let i=0; i<tableau.rows.length; i++) {
-        let row = tableau.rows[i];
-        data.push({
-          structure: row.cells[0].innerText,
-          email: row.cells[1].innerText,
-          contact: row.cells[2].innerText
-        });
-      }
-      localStorage.setItem("annuaireData", JSON.stringify(data));
-    }
-  </script>
 </body>
 </html>
