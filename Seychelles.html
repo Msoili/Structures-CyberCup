@@ -51,6 +51,13 @@
         </table>
     </div>
 </main>
-
+<!-- Inclure le script de la base de données -->
+<script src="database.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        // Remplacez 'maurice' par l'ID de votre région
+        await initPage('seychelles');
+    });
+</script>
 </body>
 </html>

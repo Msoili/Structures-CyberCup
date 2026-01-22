@@ -1,0 +1,188 @@
+{
+  "projet": "Structures CyberCup Océan Indien",
+  "version": "1.0",
+  "derniere_mise_a_jour": "2026-01-21",
+
+  "regions": [
+    {
+      "id": "maurice",
+      "nom": "Maurice",
+      "page": "Maurice.html",
+      "structures": [
+        {
+          "id": "mdx_cyber",
+          "nom": "Middlesex University Mauritius BSc (Hons) Cybersécurité et criminalistique numérique",
+          "email": "admissions@mdx.ac.mu",
+          "contact": "+230 403 6400",
+          "ville": "Maurice"
+        },
+        {
+          "id": "beforma",
+          "nom": "BEFORMA Maurice",
+          "email": "contact@beforma.mu",
+          "contact": "+230 268 10 06",
+          "ville": "Maurice"
+        },
+        {
+          "id": "supinfo",
+          "nom": "SUPINFO Île Maurice",
+          "email": "na.wang@supinfo.com",
+          "contact": "+33 2 57 22 08 91",
+          "ville": "Maurice"
+        },
+        {
+          "id": "mdx_pentest",
+          "nom": "Middlesex University Mauritius Cyber Security et Pen Testing",
+          "email": "admissions@mdx.ac.mu",
+          "contact": "+2 304 036 400",
+          "ville": "Maurice"
+        },
+        {
+          "id": "whitefield",
+          "nom": "Whitefield Business School Baccalauréat en informatique (Hons) (technologie des réseaux et cybersécurité)",
+          "email": "info@whitefield.ac.mu",
+          "contact": "(+230) 660 00 04 / (+230) 660 00 05",
+          "ville": "Maurice"
+        }
+      ]
+    },
+    {
+      "id": "madagascar",
+      "nom": "Madagascar",
+      "page": "Madagascar.html",
+      "structures": [
+        {
+          "id": "isinfo",
+          "nom": "IS-INFO",
+          "email": "direction@isinfo.com / isinfo@gmail.com",
+          "contact": "+261 34 74 966 18 / +261 34 60 409 50",
+          "ville": "Antananarivo"
+        },
+        {
+          "id": "emedia",
+          "nom": "E-Media",
+          "email": "emediauniv.mada@gmail.com",
+          "contact": "+261 34 05 733 36",
+          "ville": "Antananarivo"
+        },
+        {
+          "id": "eni",
+          "nom": "ENI",
+          "email": "eni@univ-fianar.mg",
+          "contact": "+261 34 05 733 36",
+          "ville": "Fianarantsoa"
+        },
+        {
+          "id": "hei",
+          "nom": "HEI",
+          "email": "contact@hei.mg",
+          "contact": "034 12 345 67",
+          "ville": "Antananarivo"
+        }
+      ]
+    },
+    {
+      "id": "mayotte",
+      "nom": "Mayotte",
+      "page": "Mayotte.html",
+      "structures": [
+        {
+          "id": "forma_boost",
+          "nom": "Forma Boost-Formation Digital & IA",
+          "email": "contact@formation-boost.fr",
+          "contact": "+262 639 06 16 43",
+          "ville": "Dembeni"
+        },
+        {
+          "id": "lycee_bamana",
+          "nom": "Lycée Younoussa Bamana",
+          "email": "lpo.mamoudzou@ac-mayotte.fr",
+          "contact": "+262 262 61 07 62 / 06 39 68 89 51",
+          "ville": "Mamoudzou"
+        },
+        {
+          "id": "univ_mayotte",
+          "nom": "Université de Mayotte",
+          "email": "secretariat@univ-mayotte.fr",
+          "contact": "+262 262 61 07 62",
+          "ville": "Dembeni"
+        },
+        {
+          "id": "cci_mayotte",
+          "nom": "CCI Mayotte",
+          "email": "formation@mayotte.cci.fr",
+          "contact": "02 69 61 04 26 / 02 69 61 85 59",
+          "ville": "Mamoudzou"
+        },
+        {
+          "id": "axam",
+          "nom": "AXAMFORMATION",
+          "email": "contact@axamformation.fr",
+          "contact": "06 54 40 55 57",
+          "ville": "Mamoudzou"
+        },
+        {
+          "id": "expernet",
+          "nom": "Expernet Campus Informatique Mayotte",
+          "email": "campus@expernet.re",
+          "contact": "+262 639 21 58 14",
+          "ville": "Mamoudzou"
+        }
+      ]
+    },
+    {
+      "id": "seychelles",
+      "nom": "Seychelles",
+      "page": "Seychelles.html",
+      "structures": [
+        {
+          "id": "sit",
+          "nom": "Seychelles Institut of Technology",
+          "email": "info@sit.sc",
+          "contact": "+248 429 27 50",
+          "ville": "Providence"
+        },
+        {
+          "id": "seypoly",
+          "nom": "Seychelles Polytechnic",
+          "email": "polymail@saypoly.edu.sc / seypoly@hotmail.com",
+          "contact": "+248 371 11 88",
+          "ville": "Anse Royal"
+        },
+        {
+          "id": "unisey",
+          "nom": "UniSey",
+          "email": "Marketing@unisey.ac.sc",
+          "contact": "+248 438 12 22",
+          "ville": "Anse Royal"
+        }
+      ]
+    },
+    {
+      "id": "comores",
+      "nom": "Comores",
+      "page": "Comores.html",
+      "structures": [
+        {
+          "id": "univ_comores",
+          "nom": "Université des Comores",
+          "email": "contact@univ-comores.km",
+          "contact": "+269 773 90 23",
+          "ville": "Comores"
+        }
+      ]
+    },
+    {
+      "id": "reunion",
+      "nom": "Réunion",
+      "page": "Réunion.html",
+      "structures": []
+    }
+  ],
+
+  "statistiques": {
+    "total_regions": 6,
+    "total_structures": 20,
+    "regions_actives": 5
+  }
+}
