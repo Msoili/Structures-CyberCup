@@ -1,28 +1,4 @@
-<!-- Réunion.html -->
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>Madagascar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="style.css" rel="stylesheet">
-</head>
-<body>
-<header class="site-header">
-  <h1>Comores</h1>
-  <nav class="site-nav">
-    <a href="index.html">Accueil</a>
-    <a href="Maurice.html">Maurice</a>
-    <a href="Madagascar.html">Madagascar</a>
-    <a href="Seychelles.html">Seychelles</a>
-    <a href="Réunion.html">Réunion</a>
-      <a href="Mayotte.html">Mayotte</a>
-
-
-
-  </nav>
-</header>
-
+<!-- Remplacer le tableau existant dans Comores.html par : -->
 <main class="container">
   <div class="table-wrap">
     <table>
@@ -34,24 +10,63 @@
         <th>Contact</th>
       </tr>
       </thead>
-      <tbody>
+      <tbody id="region-data">
+      <!-- Les données seront chargées ici dynamiquement -->
       <tr>
-        <td>Université des Comores</td>
-        <td> contact@univ-comores.km</td>
-        <td>+269 773 90 23</td>
+        <td colspan="3">Chargement des données...</td>
       </tr>
-
       </tbody>
     </table>
   </div>
 </main>
-<!-- Inclure le script de la base de données -->
-<script src="database.js"></script>
+
+<!-- Ajoutez ce script AVANT </body> -->
 <script>
   document.addEventListener('DOMContentLoaded', async () => {
-    // Remplacez 'maurice' par l'ID de votre région
-    await initPage('comores');
+    const apiUrl = 'https://sheetdb.io/api/v1/64fqb9d7ilv65';
+
+    try {
+      // 1. Récupérer toutes les données
+      const response = await fetch(apiUrl);
+      const allData = await response.json();
+
+      // 2. Filtrer pour Comores seulement
+      const comoresData = allData.filter(item =>
+              item.Région && item.Région.toLowerCase().includes('comores')
+      );
+
+      // 3. Afficher dans le tableau
+      const tableBody = document.getElementById('comores-data');
+      tableBody.innerHTML = '';
+
+      comoresData.forEach(structure => {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+        <td>${structure.Structure || ''}</td>
+        <td>${structure.Email || ''}</td>
+        <td>${structure.Contact || ''}</td>
+      `;
+
+        tableBody.appendChild(row);
+      });
+
+      // 4. Si aucune donnée
+      if (comoresData.length === 0) {
+        tableBody.innerHTML = `
+        <tr>
+          <td colspan="3">Aucune structure trouvée pour Comores</td>
+        </tr>
+      `;
+      }
+
+    } catch (error) {
+      console.error('Erreur:', error);
+      document.getElementById('comores-data').innerHTML = `
+      <tr>
+        <td colspan="3" style="color: red;">Erreur de chargement des données</td>
+      </tr>
+    `;
+    }
   });
 </script>
-</body>
-</html>
